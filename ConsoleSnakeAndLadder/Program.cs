@@ -1,4 +1,4 @@
-﻿namespace ConsoleSnakeLadder
+﻿namespace ConsoleSnakeAndLadder
 {
     internal class Program
     {
