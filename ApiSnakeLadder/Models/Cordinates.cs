@@ -12,5 +12,15 @@
             this.X = x;
             this.Y = y;
         }
+
+        public override bool Equals(Object obj)
+        {
+            var item = obj as Cordinates;
+            if (item == null) 
+            {
+                return false;
+            }
+            return this.X == item.X && this.Y == item.Y;
+        }
     }
 }
