@@ -1,0 +1,24 @@
+<div class="game-container">
+      <div class="board">
+        <div 
+          *ngFor="let square of squares()" 
+          class="square" 
+          [class.player-is-here]="gameService.playerPosition() === square"
+          [class.snake-start]="isSnakeStart(square)"
+          [class.ladder-start]="isLadderStart(square)"
+          [attr.data-square]="square">
+          <span class="square-number">{{ square }}</span>
+          <div *ngIf="gameService.playerPosition() === square" class="player-token"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="status">
+            <p *ngIf="gameService.gameStatus() === 'won'" class="win-message">🎉 You Won! 🎉</p>
+            <p *ngIf="gameService.gameStatus() === 'playing'">Current Position: {{ gameService.playerPosition() }}</p>
+            <p *ngIf="gameService.diceValue() !== null">Dice Rolled: {{ gameService.diceValue() }}</p>
+        </div>
+        <button (click)="gameService.rollDice()" [disabled]="gameService.gameStatus() === 'won'">Roll Dice 🎲</button>
+        <button (click)="gameService.resetGame()" *ngIf="gameService.gameStatus() === 'won'">Play Again 🔄</button>
+      </div>
+    </div>
