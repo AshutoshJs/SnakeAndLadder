@@ -19,7 +19,7 @@ namespace ApiSnakeLadder.Controllers
         {
             Board board = new Board(8);
             var a = 0;
-            board.Cells[0][0].AddSnake(new Snake());
+          //  board.Cells[0][0].AddSnake(new Snake()); // Add me 
 
             return Ok(board);
         }

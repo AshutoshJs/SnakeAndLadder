@@ -9,7 +9,7 @@ namespace ApiSnakeLadder.Models
 
         public Board(){}
 
-        public Board(int boardSize, int? numberOfSnakes, int? numberOfLadders)
+        public Board(int boardSize, int? numberOfSnakes = null, int? numberOfLadders =  null)
         {
             boardSize = boardSize == 0 ? 8 : boardSize;
             if (boardSize == 8) 
